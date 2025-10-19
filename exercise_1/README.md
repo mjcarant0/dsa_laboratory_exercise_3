@@ -45,6 +45,23 @@ class LinkedList:
 
 ---
 
+#### 3. **To be Added**
+```python
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
+```
+- **Purpose:** To be added
+- **How:**
+  - To be Added
+  - To be Added
+  - To be Added
+
+---
+
 ### Summary
 
 - To be Added
