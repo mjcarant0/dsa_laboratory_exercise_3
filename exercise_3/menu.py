@@ -11,7 +11,6 @@ class Menu:
     def valid_choice(self, choice):  # Validate user choice
         return choice in ['1', '2', '3', '4', '5', '6']
 
-    """Check the linked_list.py file for the LinkedList class implementation."""
     def insert_node(self):  # Insert a node
         data = input("Please enter a data: ")
         self.linked_list.insert(data)
@@ -25,10 +24,10 @@ class Menu:
         self.linked_list.search(key)
 
     def display_list(self):  # Display the linked list
-        pass
+        self.linked_list.display()
 
     def reverse_list(self):  # Reverse the linked list
-        pass
+        self.linked_list.reverse()
 
     def exit_program(self): # Exits the program
         print("Exiting program...")
