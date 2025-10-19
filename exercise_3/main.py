@@ -25,7 +25,16 @@ def main(): # Main function to run the menu loop
         '6': menu.exit_program
     }
 
-    display_menu()
+    while True:
+        display_menu()
+        choice = input("Enter your choice (1-6): ")
+
+        if not menu.valid_choice(choice):
+            print("Invalid choice. Please try again.")
+            continue
+
+        # Call the corresponding method directly
+        actions[choice]()
 
 if __name__ == "__main__":
     main()
