@@ -1,6 +1,6 @@
 <div align="center">
 
-# Exercise #2
+# Exercise #3
 
 </div>
 
