@@ -16,7 +16,7 @@ To be Added
 
 ### How the Code Works
 
-#### 1. **To be Added**
+#### 1. **Line List**
 ```[Code] (To be added)
 ```
 - **Purpose:** To be added
