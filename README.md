@@ -60,7 +60,7 @@ dsa_laboratory_exercise_3/
 ## 📝 Laboratory Exercise Overview
 
 **Brief Discussion:**  
-> to be added
+This laboratory exercise focuses on implementing and manipulating linked lists through various operations, including insertion, deletion, searching, and displaying. It progresses from basic operations to more advanced tasks, such as inserting nodes at specific positions, reversing the linked list, and creating a menu-driven program for user interaction. Each exercise builds on the previous one, enhancing understanding and practical application of linked list concepts.
 
 ---
 
@@ -93,7 +93,7 @@ dsa_laboratory_exercise_3/
     <tr>
       <td>guide_questions</td>
       <td>guide_questions.docx</td>
-      <td>to be added</td>
+      <td>Contains answers to the laboratory guide questions.</td>
     </tr>
   </tbody>
 </table>
