@@ -13,7 +13,8 @@ class Menu:
 
     """Check the linked_list.py file for the LinkedList class implementation."""
     def insert_node(self):  # Insert a node
-        pass
+        data = input("Please enter a data: ")
+        self.linked_list.insert(data)
 
     def delete_node(self):  # Delete a node
         pass
@@ -26,3 +27,7 @@ class Menu:
 
     def reverse_list(self):  # Reverse the linked list
         pass
+
+    def exit_program(self): # Exits the program
+        print("Exiting program...")
+        exit()
