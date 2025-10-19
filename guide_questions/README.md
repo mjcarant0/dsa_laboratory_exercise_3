@@ -12,7 +12,7 @@
 ---
 
 ### 2. **How does a linked list manage memory differently from arrays?**
-- To be added
+- A linked list manages memory differently from arrays because arrays use a contiguous block of memory for all their elements and have a fixed size, meaning they reserve a certain amount of memory beforehand, even if some of it isn’t used. This setup allows for efficient random access, since the address of any element can be quickly calculated using its index and the base address. However, resizing an array is difficult since you need to create a new, larger array and copy all existing elements into it. A linked list, on the other hand, uses a dynamic memory allocation approach. Each element, or in this case a node, is stored separately in memory and linked together using pointers. This makes linked lists more flexible, allowing easy insertion or deletion of nodes without reorganizing the entire structure. However, this flexibility comes with a downside, as linked lists require extra memory for storing pointers and accessing elements takes more time compared to arrays.
 
 ---
 
