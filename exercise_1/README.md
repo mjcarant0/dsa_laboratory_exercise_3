@@ -17,7 +17,7 @@ To be Added
 ### How the Code Works
 
 #### 1. **Linked List**
-```[Code] 
+```python 
 class Node:
     def __init__(self, data):
         self.data = data
@@ -32,7 +32,7 @@ class Node:
 ---
 
 #### 2. **To be Added**
-```[Code] 
+```python 
 class LinkedList:
     def __init__(self):
         self.head = None
