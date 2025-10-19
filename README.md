@@ -45,7 +45,9 @@ dsa_laboratory_exercise_3/
 │   ├── README.md
 │
 ├── exercise_3/
-│   ├── to be added
+│   ├── linked_list.py
+│   ├── main.py
+│   ├── menu.py
 │   ├── README.md
 │
 ├── guide_questions/
