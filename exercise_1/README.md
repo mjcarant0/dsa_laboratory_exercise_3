@@ -17,10 +17,10 @@ To be Added
 ### How the Code Works
 
 #### 1. **Linked List**
-```[class Node:
+```[Code] class Node:
     def __init__(self, data):
         self.data = data
-        self.next = None]
+        self.next = None
 ```
 - **Purpose:** To be added
 - **How:**  
