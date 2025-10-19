@@ -87,8 +87,8 @@ dsa_laboratory_exercise_3/
     </tr>
     <tr>
       <td>exercise_3</td>
-      <td>to be added</td>
-      <td>to be added</td>
+      <td>linked_list.py, main.py, menu.py</td>
+      <td>Implements a menu-driven program for linked list operations, including reverse, insert, delete, search, and display.</td>
     </tr>
     <tr>
       <td>guide_questions</td>
