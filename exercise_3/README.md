@@ -4,13 +4,11 @@
 
 </div>
 
----
-
 ## Challenge Task
 
 ### Overview
 
-To be Added
+This program implements a menu-driven system for managing a linked list. It allows users to perform operations such as inserting, deleting, searching, displaying, and reversing the linked list.
 
 ---
 
@@ -363,6 +361,6 @@ if __name__ == "__main__":
 
 ### Summary
 
-- To be Added
-- To be Added
-- To be Added
+- **Linked List**: Contains the core logic for linked list operations, including `insert`, `delete`, `search`, `display`, and `reverse`.
+- **Menu**: Provides a user interface to interact with the linked list through options like `Insert Node`, `Delete Node`, `Search Node`, `Display List`, and `Reverse List`.
+- **Main:** Acts as the `entry point`, displaying the menu and handling user input to call the appropriate linked list operations.
