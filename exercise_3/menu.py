@@ -17,10 +17,12 @@ class Menu:
         self.linked_list.insert(data)
 
     def delete_node(self):  # Delete a node
-        pass
+        key = input("Please enter data to be deleted: ")
+        self.linked_list.delete(key)
 
     def search_node(self):  # Search for a node
-        pass
+        key = input("Please enter data to be searched: ")
+        self.linked_list.search(key)
 
     def display_list(self):  # Display the linked list
         pass
