@@ -32,7 +32,10 @@ class Node:
 ---
 
 #### 2. **To be Added**
-```[Code] (To be added)
+```[Code] 
+class LinkedList:
+    def __init__(self):
+        self.head = None
 ```
 - **Purpose:** To be added
 - **How:**  
