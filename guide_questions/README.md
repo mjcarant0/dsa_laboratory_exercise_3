@@ -22,6 +22,6 @@
 ---
 
 ### 4. **How can we modify this code to create a doubly linked list?**
-- To be added
+- We can modify the code to create a doubly linked list by adding a prev pointer in the Node class so that each node can link to the previous node as well as the next one. The insert method should be updated to set both the next and prev pointers when adding a new node, ensuring proper connections in both directions. The delete method should also be adjusted to fix the forward and backward links after removing a node to maintain the structure of the list. Additionally, we can optionally traverse the list backward using the prev pointer.
 
 ---
