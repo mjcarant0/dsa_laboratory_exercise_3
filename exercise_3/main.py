@@ -13,6 +13,18 @@ def display_menu():  # Display menu options
 
 def main(): # Main function to run the menu loop
     """Create validation checker loop for menu choices and call appropriate methods."""
+    menu = Menu()
+
+    # Match each menu choice with its action
+    actions = {
+        '1': menu.insert_node,
+        '2': menu.delete_node,
+        '3': menu.search_node,
+        '4': menu.display_list,
+        '5': menu.reverse_list,
+        '6': menu.exit_program
+    }
+
     display_menu()
 
 if __name__ == "__main__":
