@@ -1,21 +1,26 @@
+"""
+Program to demonstrate basic operations on a singly linked list: insertion, deletion, searching, and displaying the list.
+"""
+
+# Node class for linked list
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
 
-
+# Singly Linked List class
 class LinkedList:
     def __init__(self):
         self.head = None
 
-    def display(self):
+    def display(self): # Display the linked list
         current = self.head
         while current:
             print(current.data, end=" -> ")
             current = current.next
         print("None")
 
-    def insert_end(self, data):
+    def insert_end(self, data): # Insert a new node at the end
         new_node = Node(data)
         if not self.head:
             self.head = new_node
@@ -25,7 +30,7 @@ class LinkedList:
             current = current.next
         current.next = new_node
 
-    def delete_node(self, key):
+    def delete_node(self, key): # Delete a node by value
         current = self.head
         if current and current.data == key:
             self.head = current.next
@@ -41,7 +46,7 @@ class LinkedList:
         prev.next = current.next
         current = None
 
-    def search(self, key):
+    def search(self, key): # Search for a node by value
         current = self.head
         while current:
             if current.data == key:
