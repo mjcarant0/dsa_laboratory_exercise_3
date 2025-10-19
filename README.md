@@ -37,7 +37,7 @@ cd dsa_laboratory_exercise_3
 dsa_laboratory_exercise_3/
 │
 ├── exercise_1/
-│   ├── to be added
+│   ├── basic_operations.py
 │   ├── README.md
 │
 ├── exercise_2/
@@ -79,8 +79,8 @@ This laboratory exercise focuses on implementing and manipulating linked lists t
   <tbody>
     <tr>
       <td>exercise_1</td>
-      <td>to be added</td>
-      <td>to be added</td>
+      <td>basic_operations.py</td>
+      <td>Demonstrates basic linked list operations: insert, delete, search, and display.</td>
     </tr>
     <tr>
       <td>exercise_2</td>
