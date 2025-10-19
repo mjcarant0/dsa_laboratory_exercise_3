@@ -20,7 +20,7 @@ To be Added
 ```[class Node:
     def __init__(self, data):
         self.data = data
-        self.next = None] (To be added)
+        self.next = None]
 ```
 - **Purpose:** To be added
 - **How:**  
