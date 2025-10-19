@@ -16,8 +16,11 @@ To be Added
 
 ### How the Code Works
 
-#### 1. **Line List**
-```[Code] (To be added)
+#### 1. **Linked List**
+```[class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None] (To be added)
 ```
 - **Purpose:** To be added
 - **How:**  
