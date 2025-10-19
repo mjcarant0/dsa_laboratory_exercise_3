@@ -12,7 +12,7 @@
 ---
 
 ### 2. **How does a linked list manage memory differently from arrays?**
-- To be added
+- A linked list manages memory differently from arrays because arrays use a contiguous block of memory for all their elements and have a fixed size, meaning they reserve a certain amount of memory beforehand, even if some of it isn’t used. This setup allows for efficient random access, since the address of any element can be quickly calculated using its index and the base address. However, resizing an array is difficult since you need to create a new, larger array and copy all existing elements into it. A linked list, on the other hand, uses a dynamic memory allocation approach. Each element, or in this case a node, is stored separately in memory and linked together using pointers. This makes linked lists more flexible, allowing easy insertion or deletion of nodes without reorganizing the entire structure. However, this flexibility comes with a downside, as linked lists require extra memory for storing pointers and accessing elements takes more time compared to arrays.
 
 ---
 
@@ -22,6 +22,6 @@
 ---
 
 ### 4. **How can we modify this code to create a doubly linked list?**
-- To be added
+- We can modify the code to create a doubly linked list by adding a prev pointer in the Node class so that each node can link to the previous node as well as the next one. The insert method should be updated to set both the next and prev pointers when adding a new node, ensuring proper connections in both directions. The delete method should also be adjusted to fix the forward and backward links after removing a node to maintain the structure of the list. Additionally, we can optionally traverse the list backward using the prev pointer.
 
 ---
