@@ -157,24 +157,207 @@ def reverse(self):
 ---
 
 #### 2. **Menu**
-```[Code] (To be added)
+```python
+from linked_list import LinkedList
 ```
-- **Purpose:** To be added
+- **Purpose:**
+  Imports the `LinkedList` class from the `linked_list` module so the menu can access and control linked list operations.
 - **How:**  
-  - To be Added
-  - To be Added
-  - To be Added
+  - Uses Python’s `import` statement to access code from another file.
+  - Only imports the `LinkedList` class (not the entire module).
+  - Enables the menu to create and manipulate a linked list through class methods.
 
 ---
 
-#### 2. **Main**
-```[Code] (To be added)
+```python
+class Menu:
+    def __init__(self):
+        self.linked_list = LinkedList()
 ```
-- **Purpose:** To be added
+- **Purpose:**
+  Initializes the `Menu` class and creates an instance of the linked list to perform operations on.
 - **How:**  
-  - To be Added
-  - To be Added
-  - To be Added
+  - Defines the constructor method `__init__`.
+  - Instantiates `LinkedList` and stores it in `self.linked_list`.
+  - Ensures all menu actions operate on the same linked list instance.
+
+---
+
+```python
+def valid_choice(self, choice):
+    return choice in ['1', '2', '3', '4', '5', '6']
+```
+- **Purpose:**
+  Checks if the user’s input corresponds to a valid menu option.
+- **How:**  
+  - Accepts the user’s input `choice` as a parameter.
+  - Compares it against a predefined list of valid options.
+  - Returns `True` if the input matches one of the options, otherwise `False`.
+
+---
+
+```python
+def insert_node(self):
+    data = input("Please enter a data: ")
+    self.linked_list.insert(data)
+```
+- **Purpose:**
+  Allows the user to insert a new node with the specified data into the linked list.
+- **How:**  
+  - Prompts the user to enter a value for the new node.
+  - Passes the input to the `insert` method of the linked list.
+  - The linked list then creates and adds the new node.
+
+---
+
+```python
+def delete_node(self):
+    key = input("Please enter data to be deleted: ")
+    self.linked_list.delete(key)
+```
+- **Purpose:**
+  Removes a node containing the specified data from the linked list.
+- **How:**  
+  - Prompts the user to input the value they want to remove.
+  - Sends this value to the linked list’s `delete` method.
+  - The linked list searches for and deletes the node with the matching data.
+
+---
+
+```python
+def search_node(self):
+    key = input("Please enter data to be searched: ")
+    self.linked_list.search(key)
+```
+- **Purpose:**
+  Searches for a node containing the specified data in the linked list.
+- **How:**  
+  - Prompts the user to input the data they want to find.
+  - Passes the value to the linked list’s `search` method.
+  - Displays whether the node was found or not based on the search result.
+
+---
+
+```python
+def display_list(self):
+    self.linked_list.display()
+```
+- **Purpose:**
+  Displays all nodes currently stored in the linked list.
+- **How:**  
+  - Calls the linked list’s `display` method directly.
+  - The linked list traverses its nodes from head to tail.
+  - Prints each node’s data in order.
+
+---
+
+```python
+def reverse_list(self):
+    self.linked_list.reverse()
+```
+- **Purpose:**
+  Reverses the order of the nodes in the linked list.
+- **How:**  
+  - Invokes the linked list’s `reverse` method.
+  - The method rearranges the links between nodes to point in the opposite direction.
+  - Updates the head pointer to reflect the reversed list.
+
+---
+
+```python
+def exit_program(self):
+    print("Exiting program...")
+    exit()
+```
+- **Purpose:**
+  Ends the program when the user chooses the exit option.
+- **How:**  
+  - Prints a message to indicate the program is closing.
+  - Calls Python’s built-in `exit()` function to terminate execution.
+  - Ensures a clean and immediate program shutdown.
+
+---
+
+#### 3. **Main**
+```python
+from menu import Menu
+```
+- **Purpose:**
+  Imports the `Menu` class from the `menu` module so its methods can be used to manage linked list operations.
+- **How:**  
+  - Uses Python’s `import` statement to access external code from the `menu.py` file.
+  - Brings only the `Menu` class (not the entire module) into the current script’s namespace.
+  - Allows direct creation of a Menu object without needing to prefix it with `menu.`.
+
+---
+
+```python
+def display_menu():
+  options = ["1. Insert Node", "2. Delete Node", "3. Search Node", "4. Display List", "5. Reverse List", "6. Exit"]
+
+  print("\n====== LINKED LIST MENU ======")
+  print("\n".join(options))
+  print("==============================\n")
+```
+- **Purpose:**
+  Displays the menu options for performing operations on the linked list.
+- **How:**  
+  - A list of string options is created representing each menu action.
+  - `"\n".join(options)` is used to print all options neatly in a column format.
+  - Decorative lines are printed above and below to make the menu more readable.
+
+---
+
+```python
+def main():
+    menu = Menu()
+    actions = {
+        '1': menu.insert_node,
+        '2': menu.delete_node,
+        '3': menu.search_node,
+        '4': menu.display_list,
+        '5': menu.reverse_list,
+        '6': menu.exit_program
+    }
+```
+- **Purpose:**
+  Initializes the menu system and maps user choices to their corresponding linked list operations.
+- **How:**  
+  - Creates an instance of the `Menu` class to access linked list functions.
+  - Uses a dictionary (`actions`) to associate menu numbers with their respective methods.
+  - Simplifies method calling by mapping user input directly to the right function.
+
+---
+
+```python
+while True:
+    display_menu()
+    choice = input("Enter your choice (1-6): ")
+    if not menu.valid_choice(choice):
+        print("Invalid choice. Please try again.")
+        continue
+    actions[choice]()
+```
+- **Purpose:**
+  Continuously displays the menu, handles user input, and executes the corresponding linked list operation.
+- **How:**  
+  - Calls `display_menu()` to show the menu options on every loop iteration.
+  - Accepts user input and validates it using `menu.valid_choice()`.
+  - If valid, retrieves and calls the corresponding method from the `actions` dictionary.
+  - If invalid, displays an error message and prompts again.
+
+---
+
+```python
+if __name__ == "__main__":
+    main()
+```
+- **Purpose:**
+  Ensures that the program runs the `main()` function only when the file is executed directly.
+- **How:**  
+  - Checks if the script is the entry point (`__name__ == "__main__"`).
+  - Calls the `main()` function to start the linked list menu system.
+  - Prevents `main()` from running automatically if the script is imported as a module.
 
 ---
 
