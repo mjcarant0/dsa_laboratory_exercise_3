@@ -64,3 +64,8 @@ ll.display()
 print("\nInsert at the beginning:")
 ll.insert_beginning(77)
 ll.display()
+
+# Insert a new node after a specific node and display the updated list
+print("\nInsert after a specific node:")
+ll.insert_after(11, 55)
+ll.display()
