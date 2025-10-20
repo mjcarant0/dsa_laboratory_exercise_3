@@ -1,17 +1,59 @@
 '''
-Program that demonstrates insertion at the beginning of a singly linked list. 
+Program that demonstrates insertion at the beginning and a new node after a specific node of a singly linked list. 
 '''
 
-from basic_operations import LinkedList, Node
+# Node class
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-class InsertionVariations(LinkedList):
-    def insert_beginning(self, data):  # Implement a function for insertion of new nodes at the beginning
+# Linkedlist class 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Display all nodes 
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
+
+    # Insert a node at the end
+    def insert_end(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+    # Insert a node at the beginning
+    def insert_beginning(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
 
-# Test for implementation
-ll = InsertionVariations()
+    # Insert a new node after a specific node.
+    def insert_after(self, prev_data, data):
+        current = self.head
+        while current and current.data != prev_data:
+            current = current.next
+        if not current:
+            print(f"Node with data {prev_data} not found.")
+            return
+        new_node = Node(data)
+        new_node.next = current.next
+        current.next = new_node
+
+# Test implementation
+ll = LinkedList() 
+
+# Insert nodes at the end
 ll.insert_end(11)
 ll.insert_end(88)
 
@@ -21,4 +63,9 @@ ll.display()
 # Insert a node at the beginning and display the updated list
 print("\nInsert at the beginning:")
 ll.insert_beginning(77)
+ll.display()
+
+# Insert a new node after a specific node and display the updated list
+print("\nInsert after a specific node:")
+ll.insert_after(11, 55)
 ll.display()
