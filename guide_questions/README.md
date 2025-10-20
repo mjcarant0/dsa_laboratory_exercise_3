@@ -17,7 +17,7 @@
 ---
 
 ### 3. **What happens if we delete the head node in a singly linked list?**
-- To be added
+- If we delete the head node in a singly linked list, the head pointer goes to the second node in the list. As seen in the delete node() method from exercise 1, it checks if the node deleted is the head and if it is, it moves the head pointer to the next node. This means that the old head node loses its reference and gets removed from the memory. If the head happens is the only node in the list, deleting it makes the list empty since next node would be None.
 
 ---
 
