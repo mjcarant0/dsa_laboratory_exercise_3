@@ -41,7 +41,7 @@ dsa_laboratory_exercise_3/
 │   ├── README.md
 │
 ├── exercise_2/
-│   ├── to be added
+│   ├── insertion_variations.py
 │   ├── README.md
 │
 ├── exercise_3/
@@ -84,8 +84,8 @@ This laboratory exercise focuses on implementing and manipulating linked lists t
     </tr>
     <tr>
       <td>exercise_2</td>
-      <td>to be added</td>
-      <td>to be added</td>
+      <td>insertion_variations.py</td>
+      <td>Demonstrates insertion at the beginning and after a specific node in a linked list.</td>
     </tr>
     <tr>
       <td>exercise_3</td>
