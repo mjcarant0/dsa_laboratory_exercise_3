@@ -1,6 +1,10 @@
+<div align="center">
+
 # Exercise #2
 
-## Insertion at the Beginning and After a Specific Node
+</div>
+
+## Insertion Variations
 
 ### Overview
 
