@@ -1,52 +1,169 @@
-<div align="center">
+# Exercise #2
 
-# Exercise #2 — Insertion Variations
+## Insertion at the Beginning and After a Specific Node
 
-## 📘 Overview
-This exercise demonstrates how to perform **different types of insertions** in a **singly linked list** using Python.  
-It builds on the basic linked list structure by introducing:
-- **Insertion at the beginning** of the list.
-- **Insertion after a specific node** in the list.
+### Overview
 
-Through this exercise, you’ll understand how node connections are dynamically managed in memory and how inserting elements affects the structure of a linked list.
+A **singly linked list** is a type of data structure where each node holds data and a link to the next node.
+This exercise demonstrates **inserting a new node at the beginning** of the list and **inserting a new node after a specific node**.
 
----
+### How the Code Works
 
-## ⚙️ How the Code Works
+#### 1. **Node Class**
 
-### 1. `insert_beginning(data)`
-**Purpose:**  
-To insert a new node at the **start** of the linked list.
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+```
 
-**How:**
-1. A new node is created using the provided `data`.
-2. The new node’s `next` pointer is linked to the current head of the list.
-3. The list’s `head` is updated to the new node, making it the first element.
-
-### 2. `insert_after(prev_data, data)`
-**Purpose:**  
-To insert a new node **after a specific existing node** (identified by its data value).
+**Purpose:** To represent a single node in the linked list.
 
 **How:**
-1. The list is traversed until the node containing `prev_data` is found.
-2. A new node is created and inserted right after the found node.
-3. The `next` pointers are adjusted so the new node fits correctly into the sequence.
- 
-### 3. Test Both Methods and Display the List
-**Purpose:**  
-To verify that both insertion methods (`insert_beginning()` and `insert_after()`) work correctly and modify the linked list as intended.
+
+- self.data stores the node’s data.
+- self.next stores the reference (link) to the next node.
+- Initially, self.next is set to None since the node isn’t linked yet.
+
+#### 2. LinkedList Class
+
+```python
+class LinkedList:
+    def __init__(self):
+        self.head = None
+```
+
+**Purpose:** To manage and control all the nodes in the list.
 
 **How:**
-1. Create an initial linked list using `insert_end()`.  
-2. Insert a node at the beginning and display the updated list.  
-3. Insert another node after a specific node and display the final list.
 
-## 🧠 Summary
-This exercise shows how linked lists allow **flexible insertion** without rearranging all elements (unlike arrays).  
-By adding `insert_beginning()` and `insert_after()`:
-- You can easily insert nodes **at any point** in the list.  
-- It demonstrates how **pointer manipulation** controls data organization dynamically.
+- self.head is the first node (the entry point of the list).
+- It starts as None since the list is empty at creation.
 
-These insertion techniques are fundamental to understanding **dynamic data structures** and will be useful for more advanced linked list operations such as deletion, searching, and reversal.
+#### 3. Display All Nodes
 
+```python
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
+```
+**Purpose:** To visually show how the nodes are connected.
 
+**How:**
+
+- Starts from the head and moves node by node.
+- Prints each node’s data followed by an arrow (->).
+- Stops when there are no more nodes (None).
+
+#### 4. Insert a Node at the 
+
+```python
+    def insert_end(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+```
+
+**Purpose:** To add a new node to the end of the list.
+
+**How:**
+
+- Creates a new node using the provided data.
+- If the list is empty, the new node becomes the head.
+- Otherwise, it loops until the last node and links it to the new one.
+
+#### 5. Insert a Node at the Beginning
+
+```python
+    def insert_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+```
+
+**Purpose:** To add a new node before the current head.
+
+**How:**
+
+- A new node is created.
+- The new node’s next points to the current head.
+- The head is then updated to this new node.
+
+Result: The new node becomes the first element of the list.
+
+#### 6. Insert a New Node After a Specific Node
+
+```python
+    def insert_after(self, prev_data, data):
+        current = self.head
+        while current and current.data != prev_data:
+            current = current.next
+        if not current:
+            print(f"Node with data {prev_data} not found.")
+            return
+        new_node = Node(data)
+        new_node.next = current.next
+        current.next = new_node
+```
+
+**Purpose:** To insert a new node after a node with specific data.
+
+**How:**
+
+- Traverses the list until it finds the node with the target data (prev_data).
+- If not found, prints an error message.
+- Otherwise, links the new node between the target node and the next node.
+
+#### Test Implementation
+```python
+# Create a LinkedList object
+ll = LinkedList()
+
+# Insert nodes at the end
+ll.insert_end(11)
+ll.insert_end(88)
+
+print("Linked List after inserting at the end:")
+ll.display()
+
+# Insert a node at the beginning
+print("\nInsert at the beginning:")
+ll.insert_beginning(77)
+ll.display()
+
+# Insert a node after a specific node
+print("\nInsert after a specific node:")
+ll.insert_after(11, 55)
+ll.display()
+```
+
+#### Output Example
+
+```python
+Linked List after inserting at the end:
+11 -> 88 -> None
+
+Insert at the beginning:
+77 -> 11 -> 88 -> None
+
+Insert after a specific node:
+77 -> 11 -> 55 -> 88 -> None
+```
+
+### Summary
+
+- insert_end() → Adds a new node at the end of the list.
+- insert_beginning() → Adds a node before the current head.
+- insert_after() → Inserts a node after a specific value.
+- display() → Prints the list in order.
+
+This exercise helps demonstrate how pointer manipulation works in linked lists by changing node connections dynamically.
